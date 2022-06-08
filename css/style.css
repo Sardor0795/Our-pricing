@@ -17,21 +17,23 @@ html {
 }
 
 *:focus {
-  outline: 2px dashed var(--main-color);
-  outline-offset: 3px;
+  outline: unset;
 }
 
 body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #fff;
-  color: #222;
-  font-family: "Arial", sans-serif;
+  background-color: #ecedf7;
+  color: #6e728e;
+  font-family: "Montserrat", "Arial", sans-serif;
   padding: 0;
   margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 28px;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 a {
@@ -52,17 +54,11 @@ button {
   display: inline-block;
 }
 
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
 /* CONTAINER */
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1150px;
   padding-left: 50px;
   padding-right: 50px;
   margin-left: auto;
@@ -82,10 +78,230 @@ button {
   overflow: hidden;
 }
 
+/* BUTTONS */
+
+.btn {
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  background: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 1.39286px;
+  border-radius: 6px;
+  padding: 14px;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #6d72de;
+  background-image: linear-gradient(135deg, #a2a7f0 0%, #696edd 100%);
+  color: #fff;
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: #6d72de;
+}
+
+.btn-primary:hover {
+  background-image: none;
+  background-color: #fff;
+  color: #6d72de;
+  border-color: #6d72de;
+}
+
+.btn-white:hover {
+  background-image: linear-gradient(135deg, #a2a7f0 0.05%, #696edd 100.05%);
+  color: #fff;
+  border-color: #fff;
+}
+
 /* MAIN CONTENT */
 
 .main-content {
   flex-grow: 1;
+  padding-top: 71px;
+  padding-bottom: 71px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* MAIN HEADING */
+
+.main-heading {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  margin-bottom: 40px;
+}
+
+.switch {
+  margin-bottom: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-label {
+  color: #6e728e;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.switch-btn {
+  width: 56px;
+  height: 32px;
+  background-image: linear-gradient(135deg, #a2a7f0 0%, #696edd 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  margin-left: 24px;
+  position: relative;
+}
+
+.switch-circle {
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 4px;
+  margin-left: 4px;
+  transition: margin 0.3s ease;
+}
+
+.radio-input-monthly:checked ~ .switch-btn .switch-circle {
+  margin-left: 28px;
+}
+
+.inner-label-annually {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.inner-label-monthly {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.radio-input-annually:checked ~ .switch-btn .inner-label-monthly {
+  z-index: 5;
+}
+
+.radio-input-monthly:checked ~ .switch-btn .inner-label-annually {
+  z-index: 5;
+}
+
+/* CARD SECTION */
+
+.card-section-inner {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  padding: 31px;
+  background-color: #fff;
+  box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
+}
+
+.card:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.card:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.card-prices {
+  color: #4a4d60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.card-currency {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  margin-right: 8px;
+}
+
+.card-price {
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 71px;
+  letter-spacing: -2.16px;
+}
+
+.card-info-list {
+  border-top: 1px solid rgba(110, 114, 142, 0.25);
+  padding: 0;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.card-info-item {
+  border-bottom: 1px solid rgba(110, 114, 142, 0.25);
+  padding: 12px;
+}
+
+/* BEST_CARD */
+
+.best-card {
+  color: #fff;
+  background-image: linear-gradient(135.06deg, #a2a7f0 -0.05%, #696edd 100.05%);
+  border-radius: 10px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.best-card .card-title,
+.best-card .card-price,
+.best-card .card-currency {
+  color: #fff;
+}
+
+.best-card .card-info-list,
+.best-card .card-info-item {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* BG IMGS */
+
+.bg-img-right {
+  position: absolute;
+  top: -103px;
+  right: -98px;
+  z-index: -1;
+}
+
+.bg-img-left {
+  position: absolute;
+  bottom: -457px;
+  left: -102px;
+  z-index: -1;
 }
 
 /* RETINA BG */
