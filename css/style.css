@@ -126,6 +126,8 @@ button {
   padding-top: 71px;
   padding-bottom: 71px;
   position: relative;
+  min-height: 850px;
+  overflow: hidden;
 }
 
 /* MAIN HEADING */
